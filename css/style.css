@@ -1,0 +1,143 @@
+body{
+	background-color: #000000;
+	color: lightgrey;
+	font-size: 28px;
+	font-family: 'Overpass Mono', monospace;
+}
+
+#container{
+	width: 929px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#keyword{
+	width: 927px;
+	margin: 50px auto 5px auto;
+	text-align: center;
+	padding-top:60px;
+	font-size: 48px;
+	min-height:100px;
+	border: 1px solid gray;
+	border-radius: 5px;
+}
+
+#gibbet{
+	width: 450px;
+	float:left;
+	text-align: center;
+	min-height:300px;
+	border: 1px solid gray;
+	border-radius: 5px;
+	padding: 5px;
+	margin-bottom: 5px;
+	margin-right: 5px;
+}
+
+img{
+	display: inline-block;
+}
+
+#alphabet{
+	width: 450px;
+	float: left;
+	text-align: center;
+	min-height: 300px;
+	margin-left: auto;
+	margin-right: auto;
+	margin: auto;
+	padding: 5px;
+	border: 1px solid gray;
+	border-radius: 5px;
+}
+
+.character{
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	padding: 5px;
+	margin: 5px;
+	border: 3px solid gray;
+
+	cursor: pointer;
+	border-radius: 15px;
+	display: inline-block;
+	-webkit-user-select: none;
+ 	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.character:hover{
+	background-color: #222222;
+	color: white;
+	border: 3px solid white;
+}
+
+.reset1{
+	color: green;
+	cursor: pointer;
+}
+
+.reset{
+	color: red;
+	cursor: pointer;
+}
+
+#passwordButton{
+	font-size: 18px;
+	float: left;
+	margin-left: 10px;
+	text-align: center;
+	border: 1px solid gray;
+	border-radius: 5px;
+	padding: 3px;
+	cursor: pointer;
+	-webkit-user-select: none;
+ 	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+#userPassword{
+	float:left;
+	margin-left: 250px;
+	margin-top: 6px;
+}
+
+#userPasswordPicker{
+	margin: 20px auto 5px auto;
+	width: auto;
+	height: 50px;
+	text-align:center;
+	border: 1px solid gray;
+	border-radius: 5px;
+	padding-top: 20px;
+	clear: both;
+}
+
+#music{
+	float: left;
+	margin-left:40%;
+
+	text-align: center;
+}
+
+#player{
+	text-align: center;
+	padding:auto;
+	padding-top: 6px;
+	margin-top: 3px;
+	border: 1px solid gray;
+	border-radius: 5px;
+}
+
+i{
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+i:hover{
+	cursor: pointer;
+}
