@@ -73,17 +73,17 @@ img{
 	border: 3px solid white;
 }
 
-.reset1{
+#spanVictory{
 	color: green;
 	cursor: pointer;
 }
 
-.reset{
+#spanDefeat{
 	color: red;
 	cursor: pointer;
 }
 
-#passwordButton{
+.passwordButton{
 	font-size: 18px;
 	float: left;
 	margin-left: 10px;

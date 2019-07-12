@@ -13,12 +13,6 @@ var passwordLength;
 var polishAlphabet=new Array(35);
 polishAlphabet=("AĄBCĆDEĘFGHIJKLŁMNŃOÓPQRSŚTUVWXYZŹŻ");
 
-document.getElementById('userPassword').addEventListener('keydown', function(e){
-	if(e.keyCode===13 && document.getElementById('userPassword').value!=''){
-		userPassword();
-	}
-});
-
 function resetApp(){
 	hiddenPassword="";
 	passwordRefresh();
@@ -114,11 +108,11 @@ function gibbetUpdate(temp){
 }
 
 function gameOverDefeat(){
-	document.getElementById("alphabet").innerHTML='Niestety, nie odgadłeś hasła. </br></br> <span class="reset" onclick="resetApp()">SPRÓBUJ PONOWNIE</span>';
+	document.getElementById("alphabet").innerHTML='Niestety, nie odgadłeś hasła. </br></br> <span class="endButt" id="spanDefeat">SPRÓBUJ PONOWNIE</span>';
 }
 
 function gameOverVictory(){
-	document.getElementById("alphabet").innerHTML='Gratulacje, udało Ci się odgadnąć hasło. </br></br><span class="reset1" onclick="resetApp()">ZAGRAJ PONOWNIE</span>';
+	document.getElementById("alphabet").innerHTML='Gratulacje, udało Ci się odgadnąć hasło. </br></br><span class="endButt" id="spanVictory">ZAGRAJ PONOWNIE</span>';
 
 }
 
@@ -157,22 +151,3 @@ function randomPassword(){
 	passwordRefresh();
 	characterGen();
 }
-
-// function readTextFile(file){
-// 	alert("no nwm");
-// 	var rawFile = new XMLHttpRequest();
-// 	rawFile.open("GET", file, true);
-// 	rawFile.onreadystatechange = function(){
-// 		alert("nwm");
-// 		if(rawFile.readyState===4){
-// 			alert("y");
-// 			if(rawFile.status===200 || rawFile.status === 0){
-// 				 var passwords = rawFile.responseText;
-// 				 alert(passwords);
-// 				 alert("saywhat?");
-// 			}
-// 		}
-// 	}
-// 	rawFile.send(null);
-// }
-// readTextFile("file:///C:/Users/Krystian/Desktop/szubienica gosciu/config/passwordBase.txt");
