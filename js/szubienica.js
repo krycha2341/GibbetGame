@@ -128,7 +128,7 @@ function userPassword(){
 		characterGen();
 	}
 }
-
+ 
 function musicPlay(){
 	britney.play();
 }
