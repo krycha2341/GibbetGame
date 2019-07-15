@@ -90,7 +90,6 @@ function check(number){
 		document.getElementById(number).style.color = "#CC0000";
 		document.getElementById(number).style.border = "3px solid #CC0000";
 		document.getElementById(number).style.cursor = "default";
-		document.getElementById(number).setAttribute("onclick",";");
 		failedCheck++;
 		no.play();
 		gibbetUpdate(failedCheck);
@@ -121,7 +120,6 @@ function gameOverDefeat(){
 	spanNode.appendChild(document.createTextNode('SPRÓBUJ PONOWNIE'));
 	alphDiv.appendChild(document.createElement('br'));
 	alphDiv.appendChild(spanNode);
-	// document.getElementById("alphabet").innerHTML='Niestety, nie odgadłeś hasła. </br></br> <span class="endButt" id="spanDefeat">SPRÓBUJ PONOWNIE</span>';
 }
 
 function gameOverVictory(){
@@ -135,7 +133,6 @@ function gameOverVictory(){
 	spanNode.appendChild(document.createTextNode('SPRÓBUJ PONOWNIE'));
 	alphDiv.appendChild(document.createElement('br'));
 	alphDiv.appendChild(spanNode);
-	// document.getElementById("alphabet").innerHTML='Gratulacje, udało Ci się odgadnąć hasło. </br></br><span class="endButt" id="spanVictory">ZAGRAJ PONOWNIE</span>';
 }
 
 
