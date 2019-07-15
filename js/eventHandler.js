@@ -14,6 +14,10 @@ document.getElementById('alphabet').addEventListener('click', function(e){
     resetApp();
   }
 	else if(e.target && e.target.matches("div.character")){
-		check(e.target.id);
+		if(e.path[0].title=='unchecked'){
+			check(e.target.id);
+			e.path[0].title='checked';
+		}
+
 	}
 });

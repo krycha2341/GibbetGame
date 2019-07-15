@@ -28,7 +28,7 @@ function hidePassword(){
 			hiddenPassword=hiddenPassword+" ";
 		}
 		else{
-			hiddenPassword=hiddenPassword + "-";
+			hiddenPassword=hiddenPassword + "_";
 		}
 	}
 }
@@ -46,7 +46,7 @@ function characterGen(){
 	for(i=0;i<35;i++){
 		var charDiv=document.createElement('div');
 		charDiv.className='character';
-		charDiv.id=i;
+		charDiv.id=i; charDiv.setAttribute('title', 'unchecked');
 		charDiv.appendChild(document.createTextNode(polishAlphabet[i]));
 		document.querySelector('#alphabet').appendChild(charDiv);
 		//alphabetTab= alphabetTab +'<div class="character" onclick="check('+i+')" id= "'+number+'">'+polishAlphabet[i]+'</div>';
@@ -102,19 +102,40 @@ function gibbetUpdate(temp){
 	if(temp<9){
 		document.getElementById("gibbet").innerHTML='<img src="img/s'+temp+'.jpg" />';
 	}
-	else{
+	else if(temp==9){
 		document.getElementById("gibbet").innerHTML='<img src="img/s'+temp+'.jpg" />'
 		gameOverDefeat();
 	}
 }
 
+var alphDiv=document.querySelector('#alphabet');
+
 function gameOverDefeat(){
-	document.getElementById("alphabet").innerHTML='Niestety, nie odgadłeś hasła. </br></br> <span class="endButt" id="spanDefeat">SPRÓBUJ PONOWNIE</span>';
+	while(alphDiv.firstChild){
+		alphDiv.removeChild(alphDiv.firstChild);
+	}
+	alphDiv.appendChild(document.createElement('br'));
+	alphDiv.appendChild(document.createTextNode('Niestety, nie odgadłeś hasła.'));
+	var spanNode=document.createElement('span');
+	spanNode.className='endButt'; spanNode.id='spanDefeat';
+	spanNode.appendChild(document.createTextNode('SPRÓBUJ PONOWNIE'));
+	alphDiv.appendChild(document.createElement('br'));
+	alphDiv.appendChild(spanNode);
+	// document.getElementById("alphabet").innerHTML='Niestety, nie odgadłeś hasła. </br></br> <span class="endButt" id="spanDefeat">SPRÓBUJ PONOWNIE</span>';
 }
 
 function gameOverVictory(){
-	document.getElementById("alphabet").innerHTML='Gratulacje, udało Ci się odgadnąć hasło. </br></br><span class="endButt" id="spanVictory">ZAGRAJ PONOWNIE</span>';
-
+	while(alphDiv.firstChild){
+		alphDiv.removeChild(alphDiv.firstChild);
+	}
+	alphDiv.appendChild(document.createElement('br'));
+	alphDiv.appendChild(document.createTextNode('Gratulacje, udało Ci się odgadnąć hasło.'));
+	var spanNode=document.createElement('span');
+	spanNode.id='spanVictory'; spanNode.className='endButt';
+	spanNode.appendChild(document.createTextNode('SPRÓBUJ PONOWNIE'));
+	alphDiv.appendChild(document.createElement('br'));
+	alphDiv.appendChild(spanNode);
+	// document.getElementById("alphabet").innerHTML='Gratulacje, udało Ci się odgadnąć hasło. </br></br><span class="endButt" id="spanVictory">ZAGRAJ PONOWNIE</span>';
 }
 
 
