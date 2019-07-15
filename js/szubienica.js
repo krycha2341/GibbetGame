@@ -1,6 +1,6 @@
 var yes= new Audio("audio/yes.wav");
 var no=new Audio("audio/no.wav");
-var britney=new Audio("audio/pixies.mp3");
+var britney=new Audio("audio/nocopy.mp3");
 
 var passwords=new Array(4);
 passwords=["BEZ PRACY NIE MA KOŁACZY", "U MNIE DZIAŁA", "DO TRZECH RAZY SZTUKA", "DOBRE POMARAŃCZOWE"];
