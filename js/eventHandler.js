@@ -13,4 +13,7 @@ document.getElementById('alphabet').addEventListener('click', function(e){
   if(e.target && e.target.matches("span.endButt")){
     resetApp();
   }
+	else if(e.target && e.target.matches("div.character")){
+		check(e.target.id);
+	}
 });

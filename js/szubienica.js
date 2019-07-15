@@ -42,16 +42,17 @@ function characterGen(){
 
 	var alphabetTab="";
 	failedCheck=0;
+
 	for(i=0;i<35;i++){
-		var number="number"+i;
-		if(i % 7 ==0){
-			alphabetTab=alphabetTab+'<div class="character" onclick="check('+i+')" id= "'+number+'" style="clear: both;">'+polishAlphabet[i]+'</div>';
-		}
-		else
-		alphabetTab= alphabetTab +'<div class="character" onclick="check('+i+')" id= "'+number+'">'+polishAlphabet[i]+'</div>';
+		var charDiv=document.createElement('div');
+		charDiv.className='character';
+		charDiv.id=i;
+		charDiv.appendChild(document.createTextNode(polishAlphabet[i]));
+		document.querySelector('#alphabet').appendChild(charDiv);
+		//alphabetTab= alphabetTab +'<div class="character" onclick="check('+i+')" id= "'+number+'">'+polishAlphabet[i]+'</div>';
 	}
 
-	document.getElementById("alphabet").innerHTML=alphabetTab;
+	//document.getElementById("alphabet").innerHTML=alphabetTab;
 
 
 }
@@ -76,20 +77,20 @@ function check(number){
 		}
 	}
 	if(checked==true){
-		document.getElementById("number"+number).style.background = "#002200";
-		document.getElementById("number"+number).style.color = "#00C000";
-		document.getElementById("number"+number).style.border = "3px solid #00C000";
-		document.getElementById("number"+number).style.cursor = "default";
+		document.getElementById(number).style.background = "#002200";
+		document.getElementById(number).style.color = "#00C000";
+		document.getElementById(number).style.border = "3px solid #00C000";
+		document.getElementById(number).style.cursor = "default";
 		passwordRefresh();
 		yes.play();
 		if(password==hiddenPassword)gameOverVictory();
 	}
 	else{
-		document.getElementById("number"+number).style.background = "#330000";
-		document.getElementById("number"+number).style.color = "#CC0000";
-		document.getElementById("number"+number).style.border = "3px solid #CC0000";
-		document.getElementById("number"+number).style.cursor = "default";
-		document.getElementById("number"+number).setAttribute("onclick",";");
+		document.getElementById(number).style.background = "#330000";
+		document.getElementById(number).style.color = "#CC0000";
+		document.getElementById(number).style.border = "3px solid #CC0000";
+		document.getElementById(number).style.cursor = "default";
+		document.getElementById(number).setAttribute("onclick",";");
 		failedCheck++;
 		no.play();
 		gibbetUpdate(failedCheck);
@@ -128,7 +129,7 @@ function userPassword(){
 		characterGen();
 	}
 }
- 
+
 function musicPlay(){
 	britney.play();
 }
